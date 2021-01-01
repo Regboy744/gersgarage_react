@@ -84,10 +84,7 @@ export default class UserEditInfo extends Component {
                },
                (error) => {
                     this.setState({
-                         content:
-                              (error.response && error.response.data) ||
-                              error.message ||
-                              error.toString(),
+                         content: (error.response && error.response.data) || error.message || error.toString(),
                     });
                }
           );
@@ -150,11 +147,7 @@ export default class UserEditInfo extends Component {
                     },
                     (error) => {
                          const resMessage =
-                              (error.response &&
-                                   error.response.data &&
-                                   error.response.data.message) ||
-                              error.message ||
-                              error.toString();
+                              (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
 
                          this.setState({
                               successful: false,
@@ -169,11 +162,7 @@ export default class UserEditInfo extends Component {
           return (
                <div className="col-md-12">
                     <div className="card card-container">
-                         <img
-                              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                              alt="profile-img"
-                              className="profile-img-card"
-                         />
+                         <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" />
 
                          <Form
                               onSubmit={this.handleRegister}
@@ -248,23 +237,14 @@ export default class UserEditInfo extends Component {
                                         </div>
 
                                         <div className="form-group">
-                                             <button className="btn btn-primary btn-block">
-                                                  Save Changes
-                                             </button>
+                                             <button className="btn btn-primary btn-block">Save Changes</button>
                                         </div>
                                    </div>
                               )}
 
                               {this.state.message && (
                                    <div className="form-group">
-                                        <div
-                                             className={
-                                                  this.state.successful
-                                                       ? "alert alert-success"
-                                                       : "alert alert-danger"
-                                             }
-                                             role="alert"
-                                        >
+                                        <div className={this.state.successful ? "alert alert-success" : "alert alert-danger"} role="alert">
                                              {this.state.message}
                                         </div>
                                    </div>
