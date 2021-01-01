@@ -2,10 +2,6 @@
      "name": "frontend",
      "version": "0.1.0",
      "private": true,
-     "engines": {
-          "node": "15.5.0",
-          "npm": "7.3.0"
-     },
      "dependencies": {
           "@testing-library/jest-dom": "^5.11.6",
           "@testing-library/react": "^11.2.2",
@@ -13,6 +9,7 @@
           "axios": "^0.21.0",
           "bootstrap": "^4.5.3",
           "react": "^17.0.1",
+          "react-booking-calendar": "^1.0.3",
           "react-datepicker": "^3.3.0",
           "react-dom": "^17.0.1",
           "react-router-dom": "^5.2.0",

@@ -7,8 +7,8 @@ import Textarea from "react-validation/build/textarea";
 import CheckButton from "react-validation/build/button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import BookingCalendar from "../../plugin/react-booking-calendar-master";
-import "../../plugin/react-booking-calendar-master/src/bookingCalendar.css";
+import BookingCalendar from "react-booking-calendar";
+import "./bookingCalendar.css";
 
 import UserService from "../../services/user.service";
 const USER = JSON.parse(localStorage.getItem("user"));
