@@ -55,7 +55,7 @@ class ServiceOrderList extends Component {
 
      //  FUNCTION TO DELETE BASE ON THE VEHICLE ID AND REFRESH THE PAGE WITH THE NEW STATE
      deleteSo(id) {
-          axios.delete("https://gers-garage.herokuapp.com/delete/" + id).then((response) => {
+          axios.delete("https://gersgarage-api.herokuapp.com/delete/" + id).then((response) => {
                console.log(response.data);
           });
 

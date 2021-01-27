@@ -73,7 +73,7 @@ export default class ServiceOrderRegister extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gers-garage.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
+          axios.get("https://gersgarage-api.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
                .then((response) => {
                     this.setState({
                          status: "Booked",
@@ -89,7 +89,7 @@ export default class ServiceOrderRegister extends Component {
                     });
                });
 
-          axios.get("https://gers-garage.herokuapp.com/servicesorder/availability")
+          axios.get("https://gersgarage-api.herokuapp.com/servicesorder/availability")
                .then((response) => {
                     this.setState({
                          bookings: response.data,

@@ -75,7 +75,7 @@ export default class AddressEditInfo extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gers-garage.herokuapp.com/address/" + this.props.match.params.id)
+          axios.get("https://gersgarage-api.herokuapp.com/address/" + this.props.match.params.id)
                .then((response) => {
                     this.setState({
                          address_type: response.data.address_type,

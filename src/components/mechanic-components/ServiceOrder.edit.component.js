@@ -122,7 +122,7 @@ export default class ServiceEditInfo extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gers-garage.herokuapp.com/servicesorder/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
+          axios.get("https://gersgarage-api.herokuapp.com/servicesorder/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
                .then((response) => {
                     this.setState({
                          status: response.data.status,
@@ -141,7 +141,7 @@ export default class ServiceEditInfo extends Component {
                     });
                });
 
-          axios.get("https://gers-garage.herokuapp.com/user/all")
+          axios.get("https://gersgarage-api.herokuapp.com/user/all")
                .then((response) => {
                     if (response.data.length > 0) {
                          this.setState({

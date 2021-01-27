@@ -1,10 +1,10 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
-const API_URL = "https://gers-garage.herokuapp.com/user/";
-const API_ADDRESS_URL = "https://gers-garage.herokuapp.com/address/";
-const API_VEHICLE_URL = "https://gers-garage.herokuapp.com/vehicles/";
-const API_OS_URL = "https://gers-garage.herokuapp.com/servicesorder/";
+const API_URL = "https://gersgarage-api.herokuapp.com/user/";
+const API_ADDRESS_URL = "https://gersgarage-api.herokuapp.com/address/";
+const API_VEHICLE_URL = "https://gersgarage-api.herokuapp.com/vehicles/";
+const API_OS_URL = "https://gersgarage-api.herokuapp.com/servicesorder/";
 
 const USER = JSON.parse(localStorage.getItem("user"));
 

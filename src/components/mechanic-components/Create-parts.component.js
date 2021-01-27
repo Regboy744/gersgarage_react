@@ -117,7 +117,7 @@ class CreateParts extends Component {
                quantity: this.state.quantity,
           };
 
-          axios.post("https://gers-garage.herokuapp.com/stock/create", parts).then((res) => console.log(res.data));
+          axios.post("https://gersgarage-api.herokuapp.com/stock/create", parts).then((res) => console.log(res.data));
           console.log(parts);
 
           window.location = "/partlist";
