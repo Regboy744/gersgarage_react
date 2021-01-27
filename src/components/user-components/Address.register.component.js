@@ -68,6 +68,7 @@ export default class AddressRegister extends Component {
 
           this.state = {
                currentUser: "",
+               message: "",
           };
      }
 
@@ -139,7 +140,8 @@ export default class AddressRegister extends Component {
                          });
                     },
                     (error) => {
-                         const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+                         const resMessage =
+                              (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
 
                          this.setState({
                               successful: false,
@@ -154,7 +156,7 @@ export default class AddressRegister extends Component {
           return (
                <div className="col-md-12">
                     <div className="card card-container">
-                         <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" />
+                         {/* <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" /> */}
 
                          <Form
                               onSubmit={this.handleRegister}
@@ -165,15 +167,21 @@ export default class AddressRegister extends Component {
                               {!this.state.successful && (
                                    <div>
                                         <div className="form-group">
-                                             <label htmlFor="address">Address</label>
-                                             <Input
+                                             <label>Address Type</label>
+                                             <select
                                                   type="text"
                                                   className="form-control"
                                                   name="address_type"
                                                   value={this.state.address_type}
                                                   onChange={this.onChangeAddress_type}
                                                   validations={[required, address_type]}
-                                             />
+                                             >
+                                                  <option value="" valselected>
+                                                       Choose a option
+                                                  </option>
+                                                  <option value="Home">Home</option>
+                                                  <option value="Work">Work</option>
+                                             </select>
                                         </div>
 
                                         <div className="form-group">
@@ -190,17 +198,38 @@ export default class AddressRegister extends Component {
 
                                         <div className="form-group">
                                              <label htmlFor="phone">City</label>
-                                             <Input type="text" className="form-control" name="city" value={this.state.city} onChange={this.onChangeCity} validations={[required, city]} />
+                                             <Input
+                                                  type="text"
+                                                  className="form-control"
+                                                  name="city"
+                                                  value={this.state.city}
+                                                  onChange={this.onChangeCity}
+                                                  validations={[required, city]}
+                                             />
                                         </div>
 
                                         <div className="form-group">
-                                             <label htmlFor="password">Code</label>
-                                             <Input type="text" className="form-control" name="code" value={this.state.code} onChange={this.onChangeCode} validations={[required, code]} />
+                                             <label htmlFor="code">Code</label>
+                                             <Input
+                                                  type="text"
+                                                  className="form-control"
+                                                  name="code"
+                                                  value={this.state.code}
+                                                  onChange={this.onChangeCode}
+                                                  validations={[required, code]}
+                                             />
                                         </div>
 
                                         <div className="form-group">
                                              <label htmlFor="user_type">Area</label>
-                                             <Input type="text" className="form-control" name="area" value={this.state.area} onChange={this.onChangeArea} validations={[required, area]} />
+                                             <Input
+                                                  type="text"
+                                                  className="form-control"
+                                                  name="area"
+                                                  value={this.state.area}
+                                                  onChange={this.onChangeArea}
+                                                  validations={[required, area]}
+                                             />
                                         </div>
 
                                         <div className="form-group">
@@ -211,7 +240,7 @@ export default class AddressRegister extends Component {
 
                               {this.state.message && (
                                    <div className="form-group">
-                                        <div className={this.state.successful ? "alert alert-success" : "alert alert-danger"} role="alert" onDurationChange={6000}>
+                                        <div className={this.state.successful ? "alert alert-success" : "alert alert-danger"} role="alert">
                                              {this.state.message}
                                         </div>
                                    </div>

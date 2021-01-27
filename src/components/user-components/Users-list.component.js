@@ -24,7 +24,7 @@ class UsersList extends Component {
      // GET ALL PARTS FROM STOCK IN THE DATA BASE AND PUT THEM IN A ARRAY CALLED parts
 
      componentDidMount() {
-          axios.get("https://gersgarage-api.herokuapp.com/user/all")
+          axios.get("https://gers-garage.herokuapp.com/user/all")
                .then((response) => {
                     this.setState({ users: response.data });
                })

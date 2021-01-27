@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import AuthService from "../../services/auth.service";
 import UserService from "../../services/user.service";
 
@@ -25,7 +25,8 @@ export default class Profile extends Component {
                          });
                     }
                );
-          }, 1000);
+               console.log(+1);
+          }, 100);
      }
 
      componentWillUnmount() {

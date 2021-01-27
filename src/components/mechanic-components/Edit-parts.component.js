@@ -40,7 +40,7 @@ class EditParts extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("http://0.0.0.0:4000/stock/" + this.props.match.params.id)
+          axios.get("https://gers-garage.herokuapp.com/stock/" + this.props.match.params.id)
                .then((response) => {
                     this.setState({
                          factory_ref: response.data.factory_ref,
@@ -136,7 +136,7 @@ class EditParts extends Component {
                quantity: this.state.quantity,
           };
 
-          axios.patch("https://gersgarage-api.herokuapp.com/stock/update/" + this.props.match.params.id, parts).then((res) => console.log(res.data));
+          axios.patch("https://gers-garage.herokuapp.com/stock/update/" + this.props.match.params.id, parts).then((res) => console.log(res.data));
 
           window.location = "/partlist";
      }

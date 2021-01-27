@@ -40,7 +40,7 @@ class PartsList extends Component {
      // GET ALL PARTS FROM STOCK IN THE DATA BASE AND PUT THEM IN A ARRAY CALLED parts
 
      componentDidMount() {
-          axios.get("https://gersgarage-api.herokuapp.com/stock/")
+          axios.get("https://gers-garage.herokuapp.com/stock/")
                .then((response) => {
                     this.setState({ parts: response.data });
                })
@@ -51,7 +51,7 @@ class PartsList extends Component {
 
      //  FUNCTION TO DELETE BASE ON THE PART IDA AND REFRESH THE PAGE WITH THE NEW STATE
      deletePart(id) {
-          axios.delete("https://gersgarage-api.herokuapp.com/stock/delete/" + id).then((response) => {
+          axios.delete("https://gers-garage.herokuapp.com/stock/delete/" + id).then((response) => {
                console.log(response.data);
           });
 

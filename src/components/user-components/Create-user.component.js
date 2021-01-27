@@ -77,7 +77,7 @@ class CreateUser extends Component {
                user_type: this.state.user_type,
           };
 
-          axios.post("https://gersgarage-api.herokuapp.com/user/signup", users).then((res) => console.log(res.data));
+          axios.post("https://gers-garage.herokuapp.com/user/signup", users).then((res) => console.log(res.data));
           console.log(users);
 
           window.location = "/userlist";

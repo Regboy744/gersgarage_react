@@ -86,7 +86,7 @@ export default class VehiclesEditInfo extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gersgarage-api.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
+          axios.get("https://gers-garage.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
                .then((response) => {
                     this.setState({
                          vid: this.props.match.params.id,
@@ -178,7 +178,7 @@ export default class VehiclesEditInfo extends Component {
           return (
                <div className="col-md-12">
                     <div className="card card-container">
-                         <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" />
+                         {/* <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" /> */}
 
                          <Form
                               onSubmit={this.handleRegister}

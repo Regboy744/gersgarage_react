@@ -33,7 +33,8 @@ import VehiclesEditInfo from "./components/user-components/Vehicles.edit.compone
 
 // SERVICE ORDERS COMPONENTS IMPORTS
 import ServiceOrderRegister from "./components/user-components/ServiceOrder.register.component";
-import ServiceOrderUpdate from "./components/mechanic-components/ServiceOrder.update.component";
+import ServiceOrderList from "./components/mechanic-components/ServiceOrder.list.component";
+import ServiceEditInfo from "./components/mechanic-components/ServiceOrder.edit.component";
 
 function App() {
      return (
@@ -53,6 +54,8 @@ function App() {
                     <Route path="/vehicles/list" component={VehicleList} />
                     <Route path="/vehicles/edit/:id" component={VehiclesEditInfo} />
                     <Route path="/vehicles/booking/:id" component={ServiceOrderRegister} />
+                    <Route path="/serviceorder/list" component={ServiceOrderList} />
+                    <Route path="/serviceorder/edit/:id" component={ServiceEditInfo} />
                     <Route exact path={["/", "/home"]} component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
@@ -60,6 +63,11 @@ function App() {
                     <Route exact path="/user" component={BoardUser} />
                     <Route path="/mod" component={BoardModerator} />
                     <Route path="/admin" component={BoardAdmin} />
+               </div>
+               <div className="col-md-12">
+                    <div class="footer">
+                         <p>Ger's Garage</p>
+                    </div>
                </div>
           </Router>
      );

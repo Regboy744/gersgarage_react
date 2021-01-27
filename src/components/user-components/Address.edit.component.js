@@ -75,7 +75,7 @@ export default class AddressEditInfo extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gersgarage-api.herokuapp.com/address/" + this.props.match.params.id)
+          axios.get("https://gers-garage.herokuapp.com/address/" + this.props.match.params.id)
                .then((response) => {
                     this.setState({
                          address_type: response.data.address_type,
@@ -152,14 +152,15 @@ export default class AddressEditInfo extends Component {
                );
           }
 
-          window.location = "/address/list";
+          this.props.history.push("/address/list");
+          window.location.reload();
      }
 
      render() {
           return (
                <div className="col-md-12">
                     <div className="card card-container">
-                         <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" />
+                         {/* <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className="profile-img-card" /> */}
 
                          <Form
                               onSubmit={this.handleRegister}
@@ -170,15 +171,19 @@ export default class AddressEditInfo extends Component {
                               {!this.state.successful && (
                                    <div>
                                         <div className="form-group">
-                                             <label htmlFor="address">Address</label>
-                                             <Input
+                                             <label>Address Type</label>
+                                             <select
                                                   type="text"
                                                   className="form-control"
                                                   name="address_type"
+                                                  disabled="disabled"
                                                   value={this.state.address_type}
                                                   onChange={this.onChangeAddress_type}
                                                   validations={[required, address_type]}
-                                             />
+                                             >
+                                                  <option value="Home">Home</option>
+                                                  <option value="Work">Work</option>
+                                             </select>
                                         </div>
 
                                         <div className="form-group">

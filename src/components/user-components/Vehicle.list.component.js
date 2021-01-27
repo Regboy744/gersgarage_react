@@ -56,7 +56,7 @@ class VehicleList extends Component {
 
      //  FUNCTION TO DELETE BASE ON THE VEHICLE ID AND REFRESH THE PAGE WITH THE NEW STATE
      deleteVehicle(id) {
-          axios.delete("https://gersgarage-api.herokuapp.com/vehicles/delete/" + id).then((response) => {
+          axios.delete("https://gers-garage.herokuapp.com/vehicles/delete/" + id).then((response) => {
                console.log(response.data);
           });
 

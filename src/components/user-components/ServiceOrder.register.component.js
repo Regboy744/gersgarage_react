@@ -34,7 +34,7 @@ const service_type = (value) => {
 };
 
 const issue_description = (value) => {
-     if (value.length < 3 || value.length > 20) {
+     if (value.length < 3 || value.length > 100) {
           return (
                <div className="alert alert-danger" role="alert">
                     The Issue Description name must be between 3 and 20 characters.
@@ -73,13 +73,14 @@ export default class ServiceOrderRegister extends Component {
      // CREATE A LIFE CICLE COMPONENT TO REATRIEVE THE DATA FROM THE DATA BASE AND CREATE THE DROPDOWN.
 
      componentDidMount() {
-          axios.get("https://gersgarage-api.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
+          axios.get("https://gers-garage.herokuapp.com/vehicles/edit/" + this.props.match.params.id + "/" + USER.accessToken + "/" + USER.id)
                .then((response) => {
                     this.setState({
-                         status: "booked",
+                         status: "Booked",
                          make: response.data.make,
                          register: response.data.register,
                          v_id: this.props.match.params.id,
+                         end_date: "",
                     });
                })
                .catch(function (error) {
@@ -88,7 +89,7 @@ export default class ServiceOrderRegister extends Component {
                     });
                });
 
-          axios.get("https://gersgarage-api.herokuapp.com/servicesorder/availability")
+          axios.get("https://gers-garage.herokuapp.com/servicesorder/availability")
                .then((response) => {
                     this.setState({
                          bookings: response.data,
@@ -135,7 +136,8 @@ export default class ServiceOrderRegister extends Component {
                     this.state.status,
                     this.state.service_type,
                     this.state.issue_description,
-                    this.state.start_date
+                    this.state.start_date,
+                    this.state.end_date
                ).then(
                     (response) => {
                          this.setState({
@@ -159,9 +161,9 @@ export default class ServiceOrderRegister extends Component {
      render() {
           return (
                <div className="col-md-12">
-                    <div className="card calendar-container">
+                    {/* <div className="card calendar-container">
                          <BookingCalendar bookings={this.state.bookings} disableHistory />
-                    </div>
+                    </div> */}
                     <div className="card card-container">
                          {/* <img
                               src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -197,10 +199,10 @@ export default class ServiceOrderRegister extends Component {
                                                   <option value="" valselected>
                                                        Choose a service
                                                   </option>
-                                                  <option value="basic_repair">Basic Repair</option>
-                                                  <option value="annual_service">Annual Service</option>
-                                                  <option value="major_Service">Major Service</option>
-                                                  <option value="major_repair">Major Repair</option>
+                                                  <option value="Basic repair">Basic Repair</option>
+                                                  <option value="Anual service">Annual Service</option>
+                                                  <option value="Major Service">Major Service</option>
+                                                  <option value="Major Repair">Major Repair</option>
                                              </Select>
                                         </div>
 
@@ -228,6 +230,8 @@ export default class ServiceOrderRegister extends Component {
                                                   filterDate={(date) => date.getDay() != 0}
                                                   isClearable
                                                   required
+                                                  disableHistory
+                                                  minDate={new Date()}
                                                   // showTimeSelect
                                                   // dateFormat="Pp"
                                                   value={this.state.start_date}

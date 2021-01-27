@@ -53,7 +53,7 @@ class AddressList extends Component {
 
      //  FUNCTION TO DELETE BASE ON THE PART IDA AND REFRESH THE PAGE WITH THE NEW STATE
      deleteAddress(id) {
-          axios.delete("https://gersgarage-api.herokuapp.com/address/delete/" + id).then((response) => {
+          axios.delete("https://gers-garage.herokuapp.com/address/delete/" + id).then((response) => {
                console.log(response.data);
           });
 

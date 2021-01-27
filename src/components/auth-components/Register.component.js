@@ -220,6 +220,9 @@ export default class Register extends Component {
                                                   onChange={this.onChangeUser_type}
                                                   validations={[required, user_type]}
                                              >
+                                                  <option value="" valselected>
+                                                       Choose a role
+                                                  </option>
                                                   <option value="customer">Customer</option>
                                                   <option value="mechanic">Mechanic</option>
                                              </select>
