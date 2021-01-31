@@ -41,7 +41,7 @@ class CreateParts extends Component {
 
      componentDidMount() {
           this.setState({
-               categories: ["Filters, "],
+               categories: ["Filters "],
                category: "Filters",
           });
      }
